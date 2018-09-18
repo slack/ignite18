@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: captainkube
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: captainkube-role
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods"]
+  verbs: ["get", "watch", "list"]
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: captainkube-binding
+subjects:
+- kind: ServiceAccount
+  name: captainkube
+  namespace: default
+roleRef:
+  kind: ClusterRole #this must be Role or ClusterRole
+  name: captainkube-role
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: captainkube
+  labels:
+    app: captainkube
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: captainkube
+  template:
+    metadata:
+      labels:
+        app: captainkube
+    spec:
+      serviceAccountName: captainkube
+      containers:
+      - name: captainkube
+        image: "jhansen/captainkube:v0.0.1"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 3000
+          initialDelaySeconds: 3
+          periodSeconds: 3

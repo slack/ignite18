@@ -1,0 +1,36 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: phippy
+  labels:
+    app: phippy
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 3333
+    protocol: TCP
+    name: phippy
+  selector:
+    app: phippy
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: phippy
+  labels:
+    draft: draft-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: phippy
+    spec:
+      containers:
+      - name: phippy
+        image: "jhansen/phippy:v0.0.1"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3333

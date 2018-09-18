@@ -1,0 +1,40 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: parrot
+  labels:
+    app: parrot
+spec:
+  type: LoadBalancer
+  selector:
+    app: parrot
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: parrot
+  labels:
+    app: parrot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parrot
+  template:
+    metadata:
+      labels:
+        app: parrot
+    spec:
+      automountServiceAccountToken: false
+      containers:
+      - name: parrot
+        image: "jhansen/parrot:v0.0.1"
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: ASPNETCORE_ENVIRONMENT
+            value: Development
