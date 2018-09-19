@@ -30,6 +30,7 @@ spec:
       labels:
         app: nodebrady
     spec:
+      automountServiceAccountToken: false
       containers:
       - name: nodebrady
         image: "jhansen/brady:v0.0.1"

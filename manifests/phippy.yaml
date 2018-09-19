@@ -28,6 +28,7 @@ spec:
       labels:
         app: phippy
     spec:
+      automountServiceAccountToken: false
       containers:
       - name: phippy
         image: "jhansen/phippy:v0.0.1"
