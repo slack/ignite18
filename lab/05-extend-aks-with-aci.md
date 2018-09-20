@@ -59,7 +59,7 @@ kubectl get node
 NAME                                         STATUS    ROLES     AGE       VERSION
 aks-nodepool1-25718494-0                     Ready     agent     1d        v1.11.2
 aks-nodepool1-25718494-1                     Ready     agent     1d        v1.11.2
-virtual-kubelet-aci-connector-linux-eastus   Ready     agent     1m        v1.11.2
+virtual-kubelet   Ready     agent     1m        v1.11.2
 ```
 
 Let's deploy an application that schedules to our virtual node:
@@ -87,7 +87,7 @@ NAME                                   DESIRED   CURRENT   UP-TO-DATE   AVAILABL
 deployment.extensions/aci-helloworld   1         1         1            1           31m       aci-helloworld   microsoft/aci-helloworld   app=aci-helloworld
 
 NAME                                  READY     STATUS    RESTARTS   AGE       IP            NODE
-pod/aci-helloworld-57bf88c4c6-rffpb   1/1       Running   0          31m       40.87.46.29   virtual-kubelet-aci-connector-linux-eastus
+pod/aci-helloworld-57bf88c4c6-rffpb   1/1       Running   0          31m       40.87.46.29   virtual-kubelet
 ```
 
 Just like our other applications like brady and phippy, `aci-helloworld` is easily scaled with `kubectl`:
@@ -105,9 +105,9 @@ NAME                                   DESIRED   CURRENT   UP-TO-DATE   AVAILABL
 deployment.extensions/aci-helloworld   3         3         3            3           30m       aci-helloworld   microsoft/aci-helloworld   app=aci-helloworld
 
 NAME                                  READY     STATUS    RESTARTS   AGE       IP              NODE
-pod/aci-helloworld-57bf88c4c6-dc226   1/1       Running   0          10m       23.100.24.76    virtual-kubelet-aci-connector-linux-eastus
-pod/aci-helloworld-57bf88c4c6-mxr7g   1/1       Running   0          10m       40.114.64.120   virtual-kubelet-aci-connector-linux-eastus
-pod/aci-helloworld-57bf88c4c6-rffpb   1/1       Running   0          30m       40.87.46.29     virtual-kubelet-aci-connector-linux-eastus
+pod/aci-helloworld-57bf88c4c6-dc226   1/1       Running   0          10m       23.100.24.76    virtual-kubelet
+pod/aci-helloworld-57bf88c4c6-mxr7g   1/1       Running   0          10m       40.114.64.120   virtual-kubelet
+pod/aci-helloworld-57bf88c4c6-rffpb   1/1       Running   0          30m       40.87.46.29     virtual-kubelet
 ```
 
 Next, [clean up your cluster and check out some additional resources](./06-cleanup-next-steps.md).
