@@ -154,3 +154,5 @@ NOTES:
   ```
 
 Check out [https://hub.kubeapps.com/](https://hub.kubeapps.com/) for a set of community-maintained charts.
+
+Next, let's scale our cluster capacity by [connecting AKS to Azure Container Instances](./05-extend-aks-with-aci.md).

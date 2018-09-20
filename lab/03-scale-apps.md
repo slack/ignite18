@@ -110,4 +110,4 @@ service "phippy" deleted
 deployment.extensions "phippy" deleted
 ```
 
-Next, let's look at how we can make it easy to manage applications with [Helm, the Kubernetes package manager](./04-get-started-with-helm).
+Next, let's look at how we can make it easy to manage applications with [Helm, the Kubernetes package manager](./04-get-started-with-helm.md).
