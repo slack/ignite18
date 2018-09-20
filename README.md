@@ -2,7 +2,9 @@
 
 Welcome to this hands-on lab for Azure Kubernetes Service (AKS). This lab will help you create an AKS cluster, deploy a microservices application, and explore basic Kubernetes concepts.
 
-# Getting Started
+The latest content for this lab can be found at [https://aka.ms/containerfest/aks-lab](https://aka.ms/containerfest/aks-lab)
+
+## Getting Started
 
 For this lab, you will need access to an Azure subscription, the Azure web portal, and Azure Cloud Shell.
 
@@ -48,7 +50,7 @@ Microsoft.ContainerService  Registered
 
 ## Checkout the lab material
 
-Next, grab a copy of the materials to use for the rest of this lab by cloning the lab repository from GitHub:
+Next, grab a copy of the materials to use for the rest of this lab by cloning the lab repository from GitHub to your Cloud Shell:
 
 ```console
 git clone https://github.com/slack/ignite18.git
