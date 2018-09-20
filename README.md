@@ -16,7 +16,7 @@ Make sure to follow the [redemption instructions](https://www.microsoftazurepass
 
 [Azure Cloud Shell](https://azure.microsoft.com/en-us/features/cloud-shell/) is a browser-based CLI tool integrated directly into the Azure portal. Cloud shell provides all of the tools you need to manage your Azure resources in a pre-configured, on-demand virtual machine.
 
-Login to the [Azure Portal](https://portal.azure.com) and click the Cloud Shell Icon:
+Login to the [Azure Cloud Shell](https://shell.azure.com) and login if needed. You may also click the Cloud Shell Icon from the Azure Portal:
 
 ![Launch Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/media/overview/overview-bash-pic.png)
 
@@ -27,8 +27,10 @@ On first launch Cloud Shell prompts to create a resource group, storage account,
 Provider registration ensures that your subscription has the required Azure services associated with your account. Type the following commands into the Cloud Shell:
 
 ```console
-az provider register -n Microsoft.ContainerService
+watch az provider register -n Microsoft.ContainerService -o table
 ```
+
+`watch` will run your command every second and display the output. When the RegistrationState is Registered, CTRL+C to continue with the lab.
 
 **Output:**
 ```

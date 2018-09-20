@@ -34,8 +34,10 @@ This cluster create will provision the control plane and attach VMs to your clus
 If you close your Cloud Shell instance, you can watch for cluster creation to complete:
 
 ```console
-az aks list -g ignite18 -o table
+watch az aks list -g ignite18 -o table
 ```
+
+Remember: Press CTRL+C to stop watching.
 
 **Output:**
 ```
@@ -63,6 +65,15 @@ Next, let's talk to the new cluster and list the cluster nodes:
 
 ```console
 kubectl get nodes
+```
+
+Note: you will notice that the only nodes you see are your agent nodes; that's because in this case AKS manages the master nodes for you. You can run this same command using ACS-engine, for example, and you will see all the nodes, master and agent.
+
+**Output:**
+```
+NAME                                         STATUS    ROLES     AGE       VERSION
+aks-nodepool1-25718494-0                     Ready     agent     1d        v1.11.2
+aks-nodepool1-25718494-1                     Ready     agent     1d        v1.11.2
 ```
 
 Next [Let's deploy our services...](02-deploy-apps.md)

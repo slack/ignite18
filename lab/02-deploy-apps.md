@@ -26,7 +26,7 @@ deployment.apps "parrot" created
 After the resources are submitted to Kubernetes, a set of control loops detect that the cluster state no longer matches the desired state. These control loops kick into action and create services and launch containers. You can see the results by asking kubectl to show Deployments, Services, and Pods:
 
 ```console
-kubectl get svc,ep,deploy,po -l app=parrot
+watch kubectl get svc,ep,deploy,po -l app=parrot
 ```
 
 **Output:**
@@ -44,7 +44,7 @@ NAME                          READY     STATUS    RESTARTS   AGE
 pod/parrot-77b5f95cc6-jjwp8   1/1       Running   0          44s
 ```
 
-Run this command a few times and you can watch as the cluster state converges. A few things to observe:
+Watch as the cluster state converges, a few things to observe (CTRL+C to exit the watch):
 
 * By requesting a Service of type `LoadBalancer`, Kubernetes will reach out to Azure infrastructure and automatically provision a loadbalancer and public IP address. The loadbalancer is automatically configured to point to your application workload
 * When the `EXTERNAL-IP` field for our `service/parrot` transitions from `<pending>` to a public IP, our service should be reachable
