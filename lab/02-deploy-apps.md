@@ -91,7 +91,11 @@ pod/parrot-77b5f95cc6-jjwp8       1/1       Running   0          10m
 ```
 
 ```console
-$ kubectl get deploy,rs,po
+kubectl get deploy,rs,po
+```
+
+**Output:**
+```
 NAME                                DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 deployment.extensions/captainkube   1         1         1            1           9s
 
@@ -101,6 +105,7 @@ replicaset.extensions/captainkube-7f4c784569   1         1         1         9s
 NAME                               READY     STATUS    RESTARTS   AGE
 pod/captainkube-7f4c784569-2vndh   1/1       Running   0          9s
 ```
+
 ## Deploy phippy and brady
 
 Next let's add two more applications to our cluster. Phippy is a simple PHP application and Brady is written in Node.js. Both are happy to join our AKS cluster:

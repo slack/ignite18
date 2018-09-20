@@ -100,7 +100,7 @@ Azure Container Instances are automatically launched to accommodate the desired 
 
 **Output:**
 ```
-$ kubectl get deploy,po -o wide -l app=aci-helloworld
+kubectl get deploy,po -o wide -l app=aci-helloworld
 NAME                                   DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE       CONTAINERS       IMAGES                     SELECTOR
 deployment.extensions/aci-helloworld   3         3         3            3           30m       aci-helloworld   microsoft/aci-helloworld   app=aci-helloworld
 

@@ -93,7 +93,7 @@ Pretty neat!
 Let's clean up Phippy and friends, tell `kubectl` to delete all the resources that appear in the `manifests/` directory:
 
 ```
-$ kubectl delete -f manifests/
+kubectl delete -f manifests/
 ```
 
 **Output:**
