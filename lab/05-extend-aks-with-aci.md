@@ -4,6 +4,10 @@ Azure Container Instances (ACI) provide a hosted environment for running contain
 
 When using the Virtual Kubelet provider for Azure Container Instances, both Linux and Windows containers can be scheduled on a container instance as if it is a standard Kubernetes node. This configuration allows you to take advantage of both the capabilities of Kubernetes and the management value and cost benefit of container instances.
 
+## virtual nodes in AKS [Optional]
+
+To be part of the virtual node private preview please fill out this form: aka.ms/aks-virtual-node-preview-sign-up
+
 Install the ACI to Kubernetes connector using the az CLI:
 ```
 az aks install-connector -n ignite18 -g ignite18
