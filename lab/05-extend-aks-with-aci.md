@@ -48,7 +48,7 @@ Note:
 TLS key pair not provided for VK HTTP listener. A key pair was generated for you. This generated key pair is not suitable for production use.
 ```
 
-The ACI connector automatically registers with the Kubernetes cluster as a virtual virtual. This virtual node can run Pods, just like the VM-based examples we've previously run.
+The ACI connector automatically registers with the Kubernetes cluster as a virtual virtual. This virtual node can run Pods, just like the VM-based examples we've previously seen.
 
 ```
 kubectl get node
@@ -59,13 +59,32 @@ kubectl get node
 NAME                                         STATUS    ROLES     AGE       VERSION
 aks-nodepool1-25718494-0                     Ready     agent     1d        v1.11.2
 aks-nodepool1-25718494-1                     Ready     agent     1d        v1.11.2
-virtual-kubelet   Ready     agent     1m        v1.11.2
+virtual-kubelet                              Ready     agent     1m        v1.11.2
 ```
+
+To schedule work to our virtual node, we will use a few Kubernetes features, node selection and tolerations:
+
+```
+      nodeSelector:
+        kubernetes.io/hostname: virtual-kubelet
+      tolerations:
+      - key: virtual-kubelet.io/provider
+        operator: Equal
+        value: azure
+        effect: NoSchedule
+```
+
+These clauses in the `aci-helloworld` manifest inform the Kubernetes scheduler of some additional constraints. First, the scheduler should select a node whose hostname is `virtual-kubelet` and second, the workload can "tolerate" running on a node that is powered by a virtual kubelet.
 
 Let's deploy an application that schedules to our virtual node:
 
 ```
 kubectl apply -f manifests/aci-helloworld.yaml
+```
+
+Next, let's get a list of pods, but instead of selecting all pods we will use a label selector. This selector `app=aci-helloworld` will filter the results, only returning resources that have that label. Labels are key-value pairs and are part of the resource manifest.
+
+```
 kubectl get po -l app=aci-helloworld
 ```
 

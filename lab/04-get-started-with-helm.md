@@ -38,6 +38,8 @@ This launches an in-cluster component called `tiller` which interacts with the K
 
 ## Use a chart
 
+A chart is a structured collection of yaml files that contain the same information that a manifest might, but are easier to understand, can be templated to remove large amounts of duplicated information, enable dynamic configuration, and can be versioned to provide the Helm user with a wide array of sophisticated deployment control.
+
 Anyone can create a chart, but to get started, let's use a chart that has been authored by the Helm community.
 
 Let's install WordPress, a popular, open source blog. Let's update the list of available charts and look for WordPress:
@@ -73,7 +75,7 @@ helm install stable/wordpress
 
 As you can see, WordPress is more involved than our simple set of Phippy microservices. A few things to note:
 
-* Helm has generated a `release` for this application, named `exciting-dragonfly`. This lets us run multiple, independent instances of WordPress on the same cluster
+* Helm has generated a `release` for this application, named `exciting-dragonfly`. A release is a Helm construct that tracks all of the resources for this chart under one entity. This lets us run multiple, independent instances of WordPress on the same cluster. While we have taken auto-generated names, you can pass a release name. For example, you could create a release for each of your blogs: `recipes` and `books`.
 * Helm returns a list of all of the resources that were created for this chart. We see the usual suspects, Deployments and Services, but we also see some new resources:
     * Secrets, ConfigMap, and Volumes!
 
