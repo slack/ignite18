@@ -48,7 +48,7 @@ Note:
 TLS key pair not provided for VK HTTP listener. A key pair was generated for you. This generated key pair is not suitable for production use.
 ```
 
-The ACI connector automatically registers with the Kubernetes cluster as a virtual virtual. This virtual node can run Pods, just like the VM-based examples we've previously seen.
+The ACI connector automatically registers with the Kubernetes cluster as a virtual node. This virtual node can run Pods, just like the VM-based examples we've previously seen.
 
 ```
 kubectl get node
