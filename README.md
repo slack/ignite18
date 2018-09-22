@@ -16,11 +16,11 @@ Make sure to follow the [redemption instructions](https://www.microsoftazurepass
 
 [Azure Cloud Shell](https://azure.microsoft.com/en-us/features/cloud-shell/) is a browser-based CLI tool integrated directly into the Azure portal. Cloud shell provides all of the tools you need to manage your Azure resources in a pre-configured, on-demand virtual machine.
 
-Login to the [Azure Cloud Shell](https://shell.azure.com) and login if needed. You may also click the Cloud Shell Icon from the Azure Portal:
+Navigate to the [Azure Cloud Shell https://shell.azure.com](https://shell.azure.com) and login if needed. You may also click the Cloud Shell Icon from the Azure Portal:
 
 ![Launch Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/media/overview/overview-bash-pic.png)
 
-On first launch Cloud Shell prompts to create a resource group, storage account, and Azure Files share on your behalf. This is a one-time step and will be automatically attached for all sessions. A single file share can be mapped and will be used by both Bash and PowerShell in Cloud Shell (Preview).
+On first launch, Cloud Shell prompts to create a resource group, storage account, and Azure Files share on your behalf. This is a one-time step and will be automatically attached for all sessions. A single file share can be mapped and will be used by both Bash and PowerShell in Cloud Shell (Preview).
 
 ## Register Providers
 
