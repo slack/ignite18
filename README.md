@@ -22,9 +22,18 @@ Navigate to the [Azure Cloud Shell https://shell.azure.com](https://shell.azure.
 
 On first launch, Cloud Shell prompts to create a resource group, storage account, and Azure Files share on your behalf. This is a one-time step and will be automatically attached for all sessions. A single file share can be mapped and will be used by both Bash and PowerShell in Cloud Shell (Preview).
 
+## Checkout the lab material
+
+Next, grab a copy of the materials for the rest of this lab by cloning the lab repository from GitHub to your Cloud Shell instance:
+
+```console
+git clone https://github.com/slack/ignite18.git
+cd ignite18
+```
+
 ## Register Providers
 
-Provider registration ensures that your subscription has the required Azure services associated with your account. Type the following commands into the Cloud Shell:
+Provider registration ensures that your subscription has the necessary Azure services activated on your account. Type the following commands into the Cloud Shell:
 
 ```console
 watch az provider register -n Microsoft.ContainerService -o table
@@ -48,15 +57,6 @@ az provider show -n Microsoft.ContainerService -o table
 Namespace                   RegistrationState
 --------------------------  -------------------
 Microsoft.ContainerService  Registered
-```
-
-## Checkout the lab material
-
-Next, grab a copy of the materials to use for the rest of this lab by cloning the lab repository from GitHub to your Cloud Shell:
-
-```console
-git clone https://github.com/slack/ignite18.git
-cd ignite18
 ```
 
 Great! You are ready to [create your first AKS cluster](lab/01-create-cluster.md).
