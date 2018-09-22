@@ -8,7 +8,7 @@ The latest content for this lab can be found at [https://aka.ms/containerfest/ak
 
 For this lab, you will need access to an Azure subscription, the Azure web portal, and Azure Cloud Shell.
 
-If you do not have access to an active Azure subscription you may obtain an Azure Pass. The Azure Pass provides free Azure credit, obtain a redemption code and visit [https://www.microsoftazurepass.com/)(https://www.microsoftazurepass.com/) to obtain your subscription.
+If you do not have access to an active Azure subscription you may obtain an Azure Pass. The Azure Pass provides free Azure credit, obtain a redemption code and visit [https://www.microsoftazurepass.com/](https://www.microsoftazurepass.com/) to obtain your subscription.
 
 Make sure to follow the [redemption instructions](https://www.microsoftazurepass.com/Home/HowTo).
 
