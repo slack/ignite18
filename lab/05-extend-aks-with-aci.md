@@ -131,6 +131,6 @@ pod/aci-helloworld-57bf88c4c6-rffpb   1/1       Running   0          30m       4
 
 ## Virtual nodes in AKS [Optional]
 
-AKS is opening a private preview with support for new virtual nodes, which includes private networking. If you are interested in joining, please fill out the sign-up form at [https:://aka.ms/aks-virtual-node-preview-sign-up](aka.ms/aks-virtual-node-preview-sign-up)
+AKS is opening a private preview with support for new virtual nodes, which includes private networking. If you are interested in joining, please fill out the sign-up form at [https://aka.ms/aks-virtual-node-preview-sign-up](aka.ms/aks-virtual-node-preview-sign-up)
 
 Next, [clean up your cluster and check out some additional resources](./06-cleanup-next-steps.md).
