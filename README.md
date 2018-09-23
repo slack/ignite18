@@ -36,7 +36,7 @@ cd ignite18
 Provider registration ensures that your subscription has the necessary Azure services activated on your account. Type the following commands into the Cloud Shell:
 
 ```console
-watch az provider register -n Microsoft.ContainerService -o table
+az provider register -n Microsoft.ContainerService -o table
 ```
 
 `watch` will run your command every second and display the output. When the RegistrationState is Registered, CTRL+C to continue with the lab.
@@ -49,7 +49,7 @@ Registering is still on-going. You can monitor using 'az provider show -n Micros
 Verify that the provider has been registered by showing your provider:
 
 ```console
-az provider show -n Microsoft.ContainerService -o table
+watch az provider show -n Microsoft.ContainerService -o table
 ```
 
 **Output:**
